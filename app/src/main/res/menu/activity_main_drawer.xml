@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_list"
+            android:checked="true"
+            android:icon="@drawable/ic_3d_rotation_black_24dp"
+            android:title="@string/list" />
+        <item
+            android:id="@+id/nav_scaling"
+            android:icon="@drawable/ic_3d_rotation_black_24dp"
+            android:title="@string/scaling" />
+        <item
+            android:id="@+id/nav_service"
+            android:icon="@drawable/ic_3d_rotation_black_24dp"
+            android:title="@string/service" />
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/ic_3d_rotation_black_24dp"
+            android:title="@string/map" />
+    </group>
+
+    <group android:id="@+id/setup_group">
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_3d_rotation_black_24dp"
+            android:title="@string/settings" />
+    </group>
+
+</menu>

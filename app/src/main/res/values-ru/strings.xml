@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Выходное тестовое задание</string>
+    <string name="action_settings">Установки</string>
+    <string name="list">Лист</string>
+    <string name="map">Карта</string>
+    <string name="navigation_drawer_close"></string>
+    <string name="pref_dialog_title">Выберите язык</string>
+    <string name="pref_summary">Задает язык приложения</string>
+    <string name="pref_title">Язык</string>
+    <string name="scaling">Маштабирование</string>
+    <string name="service">Сервис</string>
+    <string name="settings">Настройки</string>
+    <string name="common">Общие</string>
+</resources>

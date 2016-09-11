@@ -1,20 +1,39 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+    <style name="MyMaterialTheme" parent="MyMaterialTheme.Base">
+        <item name="android:textColorPrimary">@color/textColorPrimary</item>
+    </style>
+
+    <style name="MyMaterialTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColor">@color/textColor</item>
+        <item name="android:textColorAlertDialogListItem">@color/textColorAlertDialogListItem</item>
+        <item name="android:textColorHighlight">@color/textColorAlertDialogListItem</item>
+        <item name="android:textColorHighlightInverse">@color/textColorAlertDialogListItem</item>
+        <item name="android:textColorHint">@color/textColorAlertDialogListItem</item>
+        <item name="android:textColorHintInverse">@color/textColorAlertDialogListItem</item>
+        <item name="android:textColorLink">@color/textColorAlertDialogListItem</item>
+        <item name="android:textColorLinkInverse">@color/textColorAlertDialogListItem</item>
+        <item name="android:textColorPrimary">@color/textColorAlertDialogListItem</item>
+        <item name="android:textColorPrimaryDisableOnly">@color/textColorAlertDialogListItem</item>
+        <item name="android:textColorPrimaryInverse">@color/textColorAlertDialogListItem</item>
+        <item name="android:textColorPrimaryInverseDisableOnly">@color/textColorAlertDialogListItem</item>
+        <item name="android:textColorPrimaryInverseNoDisable">@color/textColorAlertDialogListItem</item>
+        <item name="android:textColorPrimaryNoDisable">@color/textColorAlertDialogListItem</item>
+        <item name="android:textColorSecondary">@color/textColorAlertDialogListItem</item>
+        <item name="android:textColorSecondaryInverse">@color/textColorAlertDialogListItem</item>
+        <item name="android:textColorSecondaryInverseNoDisable">@color/textColorAlertDialogListItem</item>
+        <item name="android:textColorSecondaryNoDisable">@color/textColorAlertDialogListItem</item>
+        <item name="android:textColorTertiary">@color/textColorSecondary</item>
+
     </style>
 
-    <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
+    <style name="MyMaterialTheme.Button" parent="MyMaterialTheme.Base">
+        <item name="colorButtonNormal">@color/colorPrimary</item>
     </style>
-
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>
