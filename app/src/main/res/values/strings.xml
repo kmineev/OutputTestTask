@@ -13,6 +13,18 @@
     <string name="pref_title">Language</string>
     <string name="pref_dialog_title">Choose language</string>
     <string name="common">Common</string>
+    <string name="action_add">Add</string>
+    <string name="add_new_item">Add new item</string>
+    <string name="edit_item">Edit item</string>
+    <string name="done">Done</string>
+    <string name="revert">Revert</string>
+    <string name="input_items_title">Input items title</string>
+    <string name="new_title_was_not_saved">New title was not saved</string>
+    <string name="save_title">Save title?</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
 
     <string-array name="languages">
         <item>English</item>

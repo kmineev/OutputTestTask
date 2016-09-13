@@ -3,30 +3,38 @@
     package="com.example.kostez.outputtesttask">
 
     <application
+        android:name=".applications.MyApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_sentiment_satisfied_black_48dp"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/MyMaterialTheme"
-        android:name="com.example.kostez.outputtesttask.MyApplication" >
+        android:theme="@style/MyMaterialTheme">
+        <!-- Splash screen -->
         <activity
-            android:name=".activityes.MainActivity"
-            android:label="@string/app_name"
-            android:theme="@style/MyMaterialTheme.Base"
-            android:launchMode="singleTop"
-            android:configChanges="keyboardHidden|orientation|screenSize|layoutDirection|locale" >
+            android:name=".activityes.SplashActivity"
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- Main activity -->
+        <activity
+            android:name=".activityes.MainActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|layoutDirection|locale"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:theme="@style/MyMaterialTheme.Base">
+            <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
         <activity
             android:name=".activityes.SettingsActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|layoutDirection|locale"
             android:label="@string/settings"
-            android:theme="@style/MyMaterialTheme"
-            android:configChanges="keyboardHidden|orientation|screenSize|layoutDirection|locale" >
+            android:theme="@style/MyMaterialTheme">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>

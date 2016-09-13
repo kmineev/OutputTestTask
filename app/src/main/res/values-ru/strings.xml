@@ -12,4 +12,5 @@
     <string name="service">Сервис</string>
     <string name="settings">Настройки</string>
     <string name="common">Общие</string>
+    <string name="action_add">Добавить</string>
 </resources>

@@ -12,10 +12,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.kostez.outputtesttask.R;
+import com.example.kostez.outputtesttask.fragments.ListFragment;
+
+import static com.example.kostez.outputtesttask.fragments.ListFragment.LIST_FRAGMENT_TAG;
+import static com.example.kostez.outputtesttask.fragments.ListFragment.ADD_DIALOG_TAG;
+import static com.example.kostez.outputtesttask.adapters.ListRecyclerViewAdapter.LAST_POSITION;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private boolean isActivityStartted = false;
+    private Menu savedMenu;
+    private boolean isList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +32,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle(getString(R.string.app_name));
         setSupportActionBar(toolbar);
+
+        getFragmentManager().beginTransaction()
+                .replace(R.id.content_main, new ListFragment(), LIST_FRAGMENT_TAG)
+                .commit();
+        isList = true;
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -39,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        savedMenu = menu;
         return true;
     }
 
@@ -46,7 +59,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_add) {
+            ((ListFragment)getFragmentManager().findFragmentByTag(LIST_FRAGMENT_TAG)).showDialog(ADD_DIALOG_TAG, "", LAST_POSITION);
             return true;
         }
 
@@ -65,10 +79,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
+
+        setBooleansToFalse();
+
         int id = item.getItemId();
 
         if (id == R.id.nav_list) {
-
+            getFragmentManager().beginTransaction()
+                    .replace(R.id.content_main, new ListFragment(), LIST_FRAGMENT_TAG)
+                    .commit();
+            isList = true;
         } else if (id == R.id.nav_scaling) {
 
         } else if (id == R.id.nav_service) {
@@ -79,6 +99,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Intent intent = new Intent(this, SettingsActivity.class);
             startActivity(intent);
         }
+
+        savedMenu.findItem(R.id.action_add).setVisible(isList);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -100,5 +122,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_NO_ANIMATION);
         startActivity(intent);
         finish();
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        super.onPrepareOptionsMenu(menu);
+        System.out.println("--- onPrepareOptionsMenu");
+        menu.findItem(R.id.action_add).setVisible(isList);
+        return true;
+    }
+
+    private void setBooleansToFalse() {
+        isList = false;
     }
 }
