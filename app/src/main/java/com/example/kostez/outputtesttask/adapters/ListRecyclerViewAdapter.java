@@ -30,7 +30,6 @@ public class ListRecyclerViewAdapter extends RecyclerView.Adapter<ListRecyclerVi
 
     public static final int MENU_EDIT = 1;
     public static final int MENU_DELETE = 2;
-
     public static final int LAST_POSITION = -1 ;
 
     private final Context mContext;
@@ -86,7 +85,7 @@ public class ListRecyclerViewAdapter extends RecyclerView.Adapter<ListRecyclerVi
 
             @Override
             public boolean onLongClick(View view) {
-                setPosition(holder.getPosition());
+                setPosition(holder.getLayoutPosition());
                 return false;
             }
         });

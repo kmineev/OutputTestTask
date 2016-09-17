@@ -9,7 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.kostez.outputtesttask.ItemClickSupport;
+import com.example.kostez.outputtesttask.helpers.ItemClickSupport;
 import com.example.kostez.outputtesttask.R;
 import com.example.kostez.outputtesttask.adapters.ListRecyclerViewAdapter;
 import com.example.kostez.outputtesttask.data.DatabaseHelperFactory;
@@ -35,6 +35,8 @@ public class ListFragment extends Fragment {
     public static final String ADD_DIALOG_TAG = "add_dialog_tag";
     private static final String EDIT_DIALOG_TAG = "edit_dialog_tag";
 
+    public static final int LIST_FRAGMENT_ID = 101;
+
     private Dao<ItemRecyclerViewTable, Integer> listRecyclerViewTableDao;
     private QueryBuilder<ItemRecyclerViewTable, Integer> queryBuilder;
     private PreparedQuery<ItemRecyclerViewTable> preparedQuery;
@@ -52,21 +54,9 @@ public class ListFragment extends Fragment {
         ItemClickSupport.addTo(recyclerView).setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
             @Override
             public void onItemClicked(RecyclerView recyclerView, int position, View v) {
-                System.out.println("--- onItemClicked");
                 showDialog(EDIT_DIALOG_TAG, itemsList.get(position).getItemTitle(), position);
             }
         });
-
-//        ItemClickSupport.addTo(recyclerView).setOnItemLongClickListener(new ItemClickSupport.OnItemLongClickListener() {
-//            @Override
-//            public boolean onItemLongClicked(RecyclerView recyclerView, int position, View v) {
-//                System.out.println("--- onItemLongClicked");
-//
-//
-//
-//                return true;
-//            }
-//        });
 
         return view;
     }
@@ -155,12 +145,9 @@ public class ListFragment extends Fragment {
 
         switch (item.getItemId()) {
             case MENU_EDIT:
-                System.out.println("--- MENU_EDIT:Position is " + position);
                 showDialog(EDIT_DIALOG_TAG, itemsList.get(position).getItemTitle(), position);
                 break;
             case MENU_DELETE:
-                // do your stuff
-                System.out.println("--- MENU_DELETE:Position is " + position);
                 try {
                     removeItem(position);
                 } catch (SQLException e) {

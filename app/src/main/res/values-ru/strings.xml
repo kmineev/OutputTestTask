@@ -13,4 +13,17 @@
     <string name="settings">Настройки</string>
     <string name="common">Общие</string>
     <string name="action_add">Добавить</string>
+    <string name="add_new_item">Добавить новый элемент</string>
+    <string name="camera">Камера</string>
+    <string name="cancel">Отмена</string>
+    <string name="delete">Удалить</string>
+    <string name="edit">Редактировать</string>
+    <string name="edit_item">Редактировать элемент</string>
+    <string name="done">Готово</string>
+    <string name="input_items_title">Введите заголовок элемента</string>
+    <string name="please_connect_to_internet">Подключитесь к интернету</string>
+    <string name="save_title">Созранить заголовок?</string>
+    <string name="save">Сохранить</string>
+    <string name="revert">Вернуться</string>
+    <string name="new_title_was_not_saved">Новый заголовок не был сохранён</string>
 </resources>

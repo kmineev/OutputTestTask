@@ -1,4 +1,4 @@
-package com.example.kostez.outputtesttask;
+package com.example.kostez.outputtesttask.helpers;
 
 import android.content.Context;
 import android.content.SharedPreferences;

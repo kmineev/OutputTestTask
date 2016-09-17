@@ -1,13 +1,16 @@
 package com.example.kostez.outputtesttask.fragments;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 
-import com.example.kostez.outputtesttask.LocaleHelper;
+import com.example.kostez.outputtesttask.helpers.LocaleHelper;
 import com.example.kostez.outputtesttask.R;
+
+import static com.example.kostez.outputtesttask.applications.MyApplication.getPreferences;
 
 /**
  * Created by Kostez on 10.09.2016.
@@ -17,7 +20,7 @@ public class SettingsFragment extends PreferenceFragment {
     private ListPreference listPreference;
 
     public static final String LANGUAGE = "language";
-
+    public static final String LANGUAGE_IS_CHANGED = "language_is_changed";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,11 @@ public class SettingsFragment extends PreferenceFragment {
             @Override
             public boolean onPreferenceChange(Preference preference, Object o) {
                 LocaleHelper.setLocale(getActivity(), o.toString());
+
+                SharedPreferences.Editor editor = getPreferences().edit();
+                editor.putBoolean(LANGUAGE_IS_CHANGED, true);
+                editor.commit();
+
                 updateViews();
                 return true;
             }

@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.widget.EditText;
@@ -31,6 +32,7 @@ public class AddDialog extends DialogFragment implements DialogInterface.OnClick
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         input = new EditText(getAppContext());
+        input.setTextColor(ContextCompat.getColor(getAppContext(), R.color.Black));
         input.setText(oldTitle);
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
@@ -65,12 +67,10 @@ public class AddDialog extends DialogFragment implements DialogInterface.OnClick
 
     public void onDismiss(DialogInterface dialog) {
         super.onDismiss(dialog);
-        Log.d(LOG_TAG, "Dialog 2: onDismiss");
     }
 
     public void onCancel(DialogInterface dialog) {
         super.onCancel(dialog);
-        Log.d(LOG_TAG, "Dialog 2: onCancel");
 
         listFragment = ((ListFragment) getFragmentManager().findFragmentByTag(LIST_FRAGMENT_TAG));
 

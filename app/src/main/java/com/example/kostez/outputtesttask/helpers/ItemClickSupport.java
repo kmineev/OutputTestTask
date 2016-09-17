@@ -1,4 +1,4 @@
-package com.example.kostez.outputtesttask;
+package com.example.kostez.outputtesttask.helpers;
 
 /**
  * Created by Kostez on 12.09.2016.
@@ -6,6 +6,8 @@ package com.example.kostez.outputtesttask;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+
+import com.example.kostez.outputtesttask.R;
 
 public class ItemClickSupport {
 

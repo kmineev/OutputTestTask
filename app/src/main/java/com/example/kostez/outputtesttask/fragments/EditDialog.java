@@ -4,8 +4,8 @@ import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
-import android.util.Log;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
@@ -21,7 +21,6 @@ import static com.example.kostez.outputtesttask.fragments.ListFragment.LIST_FRAG
  */
 public class EditDialog extends DialogFragment implements DialogInterface.OnClickListener {
 
-    final String LOG_TAG = "myLogs";
     private EditText input;
     private AlertDialog.Builder alertDialog;
     ListFragment listFragment;
@@ -32,6 +31,7 @@ public class EditDialog extends DialogFragment implements DialogInterface.OnClic
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         input = new EditText(getAppContext());
+        input.setTextColor(ContextCompat.getColor(getAppContext(), R.color.Black));
         input.setText(oldTitle);
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
@@ -65,12 +65,10 @@ public class EditDialog extends DialogFragment implements DialogInterface.OnClic
 
     public void onDismiss(DialogInterface dialog) {
         super.onDismiss(dialog);
-        Log.d(LOG_TAG, "Dialog 2: onDismiss");
     }
 
     public void onCancel(DialogInterface dialog) {
         super.onCancel(dialog);
-        Log.d(LOG_TAG, "Dialog 2: onCancel");
 
         listFragment = ((ListFragment) getFragmentManager().findFragmentByTag(LIST_FRAGMENT_TAG));
 

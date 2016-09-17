@@ -25,6 +25,9 @@
     <string name="cancel">Cancel</string>
     <string name="edit">Edit</string>
     <string name="delete">Delete</string>
+    <string name="camera">Camera</string>
+    <string name="empty" />
+    <string name="please_connect_to_internet">Please connect to internet</string>
 
     <string-array name="languages">
         <item>English</item>
